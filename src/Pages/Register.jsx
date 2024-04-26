@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const { createUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const passwordValidation = (value) => {
     const regexUpperCase = /[A-Z]/;
@@ -31,6 +34,7 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -39,10 +43,13 @@ const Register = () => {
     const displayName = name; // Use the name field as displayName
     createUser(email, password, displayName)
       .then((result) => {
+        toast.success("Registration Successfully");
+        reset();
         console.log(result);
       })
       .catch((error) => {
         console.error("Error creating user:", error);
+        toast.error("Registration Failed Try Again");
       });
   };
 
@@ -55,11 +62,11 @@ const Register = () => {
               <span className="label-text">Full Name</span>
             </label>
             <input
-              type="name"
+              type="displayName"
               placeholder="Full Name"
               className="input input-bordered"
               name="displayName"
-              {...register("name", { required: true })}
+              {...register("displayName", { required: true })}
             />
             {errors.name && (
               <span className=" text-red-600">This field is required</span>
@@ -129,6 +136,7 @@ const Register = () => {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

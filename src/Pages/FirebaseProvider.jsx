@@ -25,7 +25,7 @@ const twitterProvider = new TwitterAuthProvider();
 const FrirebaseProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(user);
+  //   console.log(user);
 
   //   create user
 

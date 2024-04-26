@@ -1,24 +1,32 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import useAuth from "../hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { signInUser } = useAuth();
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     const { email, password } = data;
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
+        toast.success("Login Successfully");
+        reset();
+        navigate("/");
       })
       .catch((error) => {
-        console.error("Error creating user:", error);
+        // console.error("Error creating user:", error);
+        toast.error("Login Failed Try Again");
       });
   };
 
@@ -73,6 +81,7 @@ const Login = () => {
         </form>
         <SocialLogin></SocialLogin>
       </div>
+      <ToastContainer />
     </div>
   );
 };
