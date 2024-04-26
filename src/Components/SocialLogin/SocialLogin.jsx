@@ -15,7 +15,7 @@ const SocialLogin = () => {
           </span>{" "}
           Google
         </button>
-        <button className="btn">
+        <button onClick={() => githubLogin()} className="btn">
           <span>
             <FaGithub />
           </span>{" "}
