@@ -53,13 +53,12 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 gap-2">{navLinks}</ul>
         </div>
         <div className="navbar-end gap-2">
-          {user?.displayName ? (
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className=" btn btn-ghost btn-circle avatar">
                 <div className=" w-10 rounded-full">
                   <img
                     src={
-                      user?.photoURL ||
                       "https://i.ibb.co/cFXnHG0/360-F-214746128-31-Jkea-P6r-U0-Nzzzd-FC4kh-Gkmqc8noe6h.jpg"
                     }
                     alt=""

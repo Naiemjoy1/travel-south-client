@@ -21,7 +21,7 @@ const SocialLogin = () => {
           </span>{" "}
           Github
         </button>
-        <button className="btn">
+        <button onClick={() => twitterLogin()} className="btn">
           <span>
             <FaTwitter />
           </span>{" "}

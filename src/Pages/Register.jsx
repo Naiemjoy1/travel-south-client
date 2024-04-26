@@ -1,9 +1,32 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { useState } from "react";
+import { IoMdEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 
 const Register = () => {
   const { createUser } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const passwordValidation = (value) => {
+    const regexUpperCase = /[A-Z]/;
+    const regexLowerCase = /[a-z]/;
+
+    if (!regexUpperCase.test(value)) {
+      return "Password must contain at least one uppercase letter";
+    }
+
+    if (!regexLowerCase.test(value)) {
+      return "Password must contain at least one lowercase letter";
+    }
+
+    if (value.length < 6) {
+      return "Password must be at least 6 characters long";
+    }
+
+    return true;
+  };
 
   const {
     register,
@@ -12,8 +35,9 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
-    createUser(email, password)
+    const { email, password, name } = data;
+    const displayName = name; // Use the name field as displayName
+    createUser(email, password, displayName)
       .then((result) => {
         console.log(result);
       })
@@ -34,7 +58,7 @@ const Register = () => {
               type="name"
               placeholder="Full Name"
               className="input input-bordered"
-              name="name"
+              name="displayName"
               {...register("name", { required: true })}
             />
             {errors.name && (
@@ -72,15 +96,26 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              type="password"
-              placeholder="password"
-              className="input input-bordered"
-              name="password"
-              {...register("password", { required: true })}
-            />
+            <div className=" relative ">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="password"
+                className="input input-bordered w-full"
+                {...register("password", {
+                  required: true,
+                  validate: passwordValidation,
+                })}
+              />
+              <span
+                className=" absolute top-4 right-4"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <IoMdEye /> : <IoIosEyeOff />}
+              </span>
+            </div>
             {errors.password && (
-              <span className=" text-red-600">This field is required</span>
+              <span className=" text-red-500">{errors.password.message}</span>
             )}
           </div>
           <div className="form-control mt-6">
