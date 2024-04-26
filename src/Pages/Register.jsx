@@ -11,6 +11,7 @@ const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const from = "/";
   //   console.log(createUser);
 
   const passwordValidation = (value) => {
@@ -40,16 +41,23 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password, displayName, photoURL } = data;
-    createUser(email, password, displayName, photoURL)
+    // console.log("Form data:", data); // Log the form data to see if it's being captured correctly
+
+    const { email, password, name, image } = data;
+
+    createUser(email, password)
       .then((result) => {
-        toast.success("Registration Successfully");
-        reset();
-        // console.log(result);
+        // console.log("User created successfully:", result);
+        toast.success("Registration Successful!"); // Log the result of createUser
+        updateUserProfile(name, image).then(() => {
+          navigate(from);
+          reset();
+          window.location.reload();
+        });
       })
       .catch((error) => {
-        // console.error("Error creating user:", error);
-        toast.error("Registration Failed Try Again");
+        // console.error("Error creating user:", error); // Log any errors during user creation
+        toast.error("Registration Failed. Please try again.");
       });
   };
 
@@ -65,10 +73,10 @@ const Register = () => {
               type="text"
               placeholder="Full Name"
               className="input input-bordered"
-              name="displayName"
-              {...register("displayName", { required: true })}
+              name="name"
+              {...register("name", { required: true })}
             />
-            {errors.displayName && (
+            {errors.name && (
               <span className=" text-red-600">This field is required</span>
             )}
           </div>
@@ -95,8 +103,8 @@ const Register = () => {
               type="text"
               placeholder="Image Url"
               className="input input-bordered"
-              name="photoURL"
-              {...register("photoURL")}
+              name="image"
+              {...register("image")}
             />
           </div>
           <div className="form-control">
