@@ -4,6 +4,10 @@ import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import TouristsSpot from "../Pages/TouristsSpot";
+import AddSpot from "../Pages/AddSpot";
+import MyList from "../Pages/MyList";
+import PrivateRoute from "../Components/Private/PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +26,22 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/tourspot",
+        element: <TouristsSpot></TouristsSpot>,
+      },
+      {
+        path: "/addspot",
+        element: (
+          <PrivateRoute>
+            <AddSpot></AddSpot>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/mylist",
+        element: <MyList></MyList>,
       },
     ],
   },

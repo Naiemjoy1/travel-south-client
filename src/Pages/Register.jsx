@@ -8,9 +8,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, updateUserProfile } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  //   console.log(createUser);
 
   const passwordValidation = (value) => {
     const regexUpperCase = /[A-Z]/;
@@ -39,16 +40,15 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password, name } = data;
-    const displayName = name; // Use the name field as displayName
-    createUser(email, password, displayName)
+    const { email, password, displayName, photoURL } = data;
+    createUser(email, password, displayName, photoURL)
       .then((result) => {
         toast.success("Registration Successfully");
         reset();
-        console.log(result);
+        // console.log(result);
       })
       .catch((error) => {
-        console.error("Error creating user:", error);
+        // console.error("Error creating user:", error);
         toast.error("Registration Failed Try Again");
       });
   };
@@ -62,13 +62,13 @@ const Register = () => {
               <span className="label-text">Full Name</span>
             </label>
             <input
-              type="displayName"
+              type="text"
               placeholder="Full Name"
               className="input input-bordered"
               name="displayName"
               {...register("displayName", { required: true })}
             />
-            {errors.name && (
+            {errors.displayName && (
               <span className=" text-red-600">This field is required</span>
             )}
           </div>
@@ -95,8 +95,8 @@ const Register = () => {
               type="text"
               placeholder="Image Url"
               className="input input-bordered"
-              name="image"
-              {...register("image")}
+              name="photoURL"
+              {...register("photoURL")}
             />
           </div>
           <div className="form-control">
