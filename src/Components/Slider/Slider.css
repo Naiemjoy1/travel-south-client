@@ -1,0 +1,7 @@
+/* Slider.css */
+
+/* Change the color of the navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: red; /* Change to your desired color */
+}

@@ -1,7 +1,17 @@
+import Slider from "../Components/Slider/Slider";
+import Typewriter from "../Components/Typewriter/Typewriter";
+
 const Home = () => {
   return (
     <div>
-      <h2 className=" text-3xl font-poppins">This is home</h2>
+      <div className=" flex justify-center items-center my-10">
+        <div className=" w-2/5 flex  p-5">
+          <Typewriter></Typewriter>
+        </div>
+        <div className=" w-3/5 ">
+          <Slider></Slider>
+        </div>
+      </div>
     </div>
   );
 };
