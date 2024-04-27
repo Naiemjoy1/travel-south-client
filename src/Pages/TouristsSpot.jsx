@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import TouristsSpotCard from "./TouristsSpotCard";
+import useAuth from "../hooks/useAuth";
 
 const TouristsSpot = () => {
+  const { user } = useAuth();
+  console.log(user);
   const spots = useLoaderData();
   const [sortOrder, setSortOrder] = useState("");
 
@@ -29,7 +32,6 @@ const TouristsSpot = () => {
         </select>
       </div>
       <div className="grid grid-cols-3 gap-5 p-10">
-        {/* Render TouristsSpotCard for each spot */}
         {sortedSpots.map((spot) => (
           <TouristsSpotCard key={spot._id} spot={spot} />
         ))}

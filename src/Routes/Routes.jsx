@@ -49,6 +49,7 @@ const routes = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
+        loader: () => fetch("http://localhost:5001/spot"),
       },
       {
         path: "/spot/:id",
