@@ -32,6 +32,7 @@ const routes = createBrowserRouter([
       {
         path: "/tourspot",
         element: <TouristsSpot></TouristsSpot>,
+        loader: () => fetch("http://localhost:5001/spot"),
       },
       {
         path: "/addspot",
@@ -43,11 +44,19 @@ const routes = createBrowserRouter([
       },
       {
         path: "/mylist",
-        element: <MyList></MyList>,
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/spot/:id",
-        element: <SpotDetails></SpotDetails>,
+        element: (
+          <PrivateRoute>
+            <SpotDetails></SpotDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5001/spot/${params.id}`),
       },

@@ -295,11 +295,11 @@ const SpotDetails = () => {
             <PackageSlider key={spot._id} spot={spot}></PackageSlider>
           ))}
         </div> */}
-        <div className=" mt-10">
+        <div className=" mt-10 mb-10">
           <Swiper
             spaceBetween={10}
             slidesPerView={3}
-            navigation={true}
+            // navigation={true}
             autoplay={{ delay: 3000 }}
             loop={true}
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
