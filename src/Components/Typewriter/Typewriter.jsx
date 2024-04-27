@@ -2,7 +2,14 @@ import { useTypewriter, cursor } from "react-simple-typewriter";
 
 const Typewriter = () => {
   const [typeEffect] = useTypewriter({
-    words: ["Bangkok", "Chiang Mai", " Ayutthaya", "Phuket", "Phi Phi Islands"],
+    words: [
+      "Bangladesh",
+      "Thailand",
+      "Indonesia",
+      "Malaysia",
+      "Vietnam",
+      "Cambodia",
+    ],
     loop: true, // Set loop to true if you want the typewriter effect to loop
     typeSpeed: 200,
     delaySpeed: 100,

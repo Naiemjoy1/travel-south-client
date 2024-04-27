@@ -1,5 +1,6 @@
 import Slider from "../Components/Slider/Slider";
 import Typewriter from "../Components/Typewriter/Typewriter";
+import SpotsHome from "./SpotsHome";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           <Slider></Slider>
         </div>
       </div>
+      <SpotsHome></SpotsHome>
     </div>
   );
 };
