@@ -26,8 +26,8 @@ const Slider = () => {
       >
         <SwiperSlide>
           <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/TWLMm6d/5.jpg"
+            className=" rounded-xl "
+            src="https://i.ibb.co/X4N68jP/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -35,7 +35,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/ry5xP8x/2.webp"
+            src="https://i.ibb.co/mNyvMg8/krabi-thailand-best-things-to-do.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -43,7 +43,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/Vvpc78Y/1.webp"
+            src="https://i.ibb.co/b7yPrgL/visit-phuket-this-year.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -51,7 +51,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/wC2QwGp/3.jpg"
+            src="https://i.ibb.co/6RsvBx8/177c3b8cf7d5dff0d971e202274668f0.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -59,7 +59,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/gTg0xJy/4.jpg"
+            src="https://i.ibb.co/nsBvpF0/Ayutthaya-Shutterstock.webp"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -67,7 +67,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/NKRpz7N/9.jpg"
+            src="https://i.ibb.co/LYXYhrJ/Bangkok.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -75,7 +75,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/DYF7pxQ/8.jpg"
+            src="https://i.ibb.co/GVdnkdV/Chiang-Mai-Take-Me-Tour-3-e1525774746926.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -83,7 +83,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/TWLMm6d/5.jpg"
+            src="https://i.ibb.co/f0gsqxr/istockphoto-588618834-612x612.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
@@ -91,7 +91,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className=" rounded-xl"
-            src="https://i.ibb.co/0mFjS0Z/1.webp"
+            src="https://i.ibb.co/sbfJv5Z/phuket-thailand-karst-formation-phuket0327-92bd3ce9266148dba74cba5e36c711e2.jpg"
             alt=""
             style={{ width: "100%", height: "533px" }}
           />
