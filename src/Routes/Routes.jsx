@@ -10,6 +10,7 @@ import MyList from "../Pages/MyList";
 import PrivateRoute from "../Components/Private/PrivateRoute";
 import SpotsHome from "../Pages/SpotsHome";
 import SpotDetails from "../Pages/SpotDetails";
+import UpdateSpot from "../Pages/UpdateSpot";
 
 const routes = createBrowserRouter([
   {
@@ -58,6 +59,12 @@ const routes = createBrowserRouter([
             <SpotDetails></SpotDetails>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/spot/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateSpot></UpdateSpot>,
         loader: ({ params }) =>
           fetch(`http://localhost:5001/spot/${params.id}`),
       },

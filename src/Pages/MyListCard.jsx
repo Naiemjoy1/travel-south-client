@@ -92,7 +92,9 @@ const MyListCard = ({ spot }) => {
           </div>
           <div className="divider"></div>
           <div className=" flex justify-between items-center">
-            <button className="btn  bg-[#5c98f2] text-white">Update</button>
+            <Link to={`/update/${_id}`}>
+              <button className="btn  bg-[#5c98f2] text-white">Update</button>
+            </Link>
             <button
               onClick={() => handleDelete(_id)}
               className="btn  bg-[#5c98f2] text-white"
