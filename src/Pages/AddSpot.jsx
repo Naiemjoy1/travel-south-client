@@ -132,7 +132,7 @@ const AddSpot = () => {
               <span className="label-text">Average Cost</span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Average Cost"
               className="input input-bordered"
               name="average_cost"

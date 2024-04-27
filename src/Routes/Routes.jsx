@@ -8,6 +8,7 @@ import TouristsSpot from "../Pages/TouristsSpot";
 import AddSpot from "../Pages/AddSpot";
 import MyList from "../Pages/MyList";
 import PrivateRoute from "../Components/Private/PrivateRoute";
+import SpotsHome from "../Pages/SpotsHome";
 
 const routes = createBrowserRouter([
   {
