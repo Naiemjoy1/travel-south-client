@@ -20,6 +20,7 @@ const AddSpot = () => {
     const total_visitors_per_year = form.total_visitors_per_year.value;
     const user_email = form.user_email.value;
     const user_name = form.user_name.value;
+    form.reset();
 
     const newSpot = {
       image,
@@ -38,7 +39,7 @@ const AddSpot = () => {
     console.log(newSpot);
 
     // send data to server
-    fetch("http://localhost:5001/addspot", {
+    fetch("http://localhost:5001/spot", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -55,6 +56,7 @@ const AddSpot = () => {
             icon: "success",
             confirmButtonText: "Done",
           });
+          form.reset();
         }
       });
   };
@@ -92,12 +94,17 @@ const AddSpot = () => {
             <label className="label">
               <span className="label-text">Country Name</span>
             </label>
-            <input
-              type="text"
-              placeholder="Country Name"
-              className="input input-bordered"
-              name="country_Name"
-            />
+            <select className="select select-bordered" name="country_Name">
+              {/* Add options for dropdown */}
+              <option value="">Select Country</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Cambodia">Cambodia</option>
+              {/* Add more options as needed */}
+            </select>
           </div>
         </div>
         <div className=" flex gap-4">
@@ -142,12 +149,13 @@ const AddSpot = () => {
             <label className="label">
               <span className="label-text">Seasonality</span>
             </label>
-            <input
-              type="text"
-              placeholder="Seasonality"
-              className="input input-bordered"
-              name="seasonality"
-            />
+            <select className="select select-bordered" name="seasonality">
+              <option value="">Select Seasonality</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Autumn">Autumn</option>
+              <option value="Winter">Winter</option>
+            </select>
           </div>
         </div>
         <div className=" flex gap-4">
@@ -157,7 +165,7 @@ const AddSpot = () => {
               <span className="label-text">Travel Time</span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Travel Time"
               className="input input-bordered"
               name="travel_time"
@@ -168,7 +176,7 @@ const AddSpot = () => {
               <span className="label-text">Total Visitors Per Year</span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Total Visitors Per Year"
               className="input input-bordered"
               name="total_visitors_per_year"
@@ -186,6 +194,8 @@ const AddSpot = () => {
               placeholder="User email"
               className="input input-bordered"
               name="user_email"
+              readOnly
+              value={user.email}
             />
           </div>
           <div className="form-control w-1/2">
@@ -197,6 +207,8 @@ const AddSpot = () => {
               placeholder="User Name"
               className="input input-bordered"
               name="user_name"
+              readOnly
+              value={user.displayName}
             />
           </div>
         </div>

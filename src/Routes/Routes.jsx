@@ -9,6 +9,7 @@ import AddSpot from "../Pages/AddSpot";
 import MyList from "../Pages/MyList";
 import PrivateRoute from "../Components/Private/PrivateRoute";
 import SpotsHome from "../Pages/SpotsHome";
+import SpotDetails from "../Pages/SpotDetails";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,12 @@ const routes = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList></MyList>,
+      },
+      {
+        path: "/spot/:id",
+        element: <SpotDetails></SpotDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/spot/${params.id}`),
       },
     ],
   },

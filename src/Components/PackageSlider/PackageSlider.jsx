@@ -1,4 +1,3 @@
-// import Swiper core and required modules
 import {
   Navigation,
   Pagination,
@@ -16,7 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 
-const Slider = () => {
+const PackageSlider = () => {
   return (
     <div className="min-h-[calc(100vh-246px)]">
       <Swiper
@@ -40,54 +39,7 @@ const Slider = () => {
             style={{ width: "100%", height: "533px" }}
           />
         </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/mNyvMg8/krabi-thailand-best-things-to-do.jpg"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/b7yPrgL/visit-phuket-this-year.jpg"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/6RsvBx8/177c3b8cf7d5dff0d971e202274668f0.jpg"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/nsBvpF0/Ayutthaya-Shutterstock.webp"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/LYXYhrJ/Bangkok.jpg"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className=" rounded-xl"
-            src="https://i.ibb.co/GVdnkdV/Chiang-Mai-Take-Me-Tour-3-e1525774746926.jpg"
-            alt=""
-            style={{ width: "100%", height: "533px" }}
-          />
-        </SwiperSlide>
+
         <SwiperSlide>
           <img
             className=" rounded-xl"
@@ -109,4 +61,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default PackageSlider;
