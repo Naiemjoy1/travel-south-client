@@ -11,6 +11,7 @@ import PrivateRoute from "../Components/Private/PrivateRoute";
 import SpotsHome from "../Pages/SpotsHome";
 import SpotDetails from "../Pages/SpotDetails";
 import UpdateSpot from "../Pages/UpdateSpot";
+import CountryDetails from "../Pages/CountryDetails";
 
 const routes = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5001/spot/${params.id}`),
+      },
+      {
+        path: "/country",
+        element: <CountryDetails></CountryDetails>,
       },
     ],
   },

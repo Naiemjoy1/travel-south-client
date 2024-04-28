@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const CountrySlider = ({ spot }) => {
-  const { image, country_Name } = spot;
+  const { _id, image, country_Name } = spot;
 
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
@@ -31,9 +33,11 @@ const CountrySlider = ({ spot }) => {
         <div id="text2" className="text-white text-center font-poppins">
           <p className="font-semibold text-xl">{country_Name}</p>
           <p>Here is filled with diverse cultures & cities</p>
-          <button className="bg-[#5c98f2] px-4 py-2 rounded-lg mt-4">
-            All Packages
-          </button>
+          <Link to={`/spot/${country_Name}`}>
+            <button className="bg-[#5c98f2] px-4 py-2 rounded-lg mt-4">
+              All Packages
+            </button>
+          </Link>
         </div>
       </div>
     </div>

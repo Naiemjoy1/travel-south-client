@@ -23,7 +23,7 @@ const SpotsHome = () => {
 
   return (
     <div className=" my-10 ">
-      <div className=" w-3/6 pl-5">
+      <div className=" w-3/6">
         <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
           Dream Vacation Destination
         </h2>

@@ -43,7 +43,7 @@ const Countries = () => {
   ];
 
   return (
-    <div className=" px-10">
+    <div className="">
       <div className=" w-3/6">
         <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
           Next Adventure
