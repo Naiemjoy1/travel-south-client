@@ -36,7 +36,7 @@ const SpotDetails = () => {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        setSpotsData(data); // Set the fetched data in state
+        setSpotsData(data);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }

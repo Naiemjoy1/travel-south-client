@@ -1,5 +1,6 @@
 import Slider from "../Components/Slider/Slider";
 import Typewriter from "../Components/Typewriter/Typewriter";
+import Countries from "./Countries";
 import SpotsHome from "./SpotsHome";
 
 const Home = () => {
@@ -13,7 +14,12 @@ const Home = () => {
           <Slider></Slider>
         </div>
       </div>
-      <SpotsHome></SpotsHome>
+      <div>
+        <SpotsHome></SpotsHome>
+      </div>
+      <div className=" my-10">
+        <Countries></Countries>
+      </div>
     </div>
   );
 };

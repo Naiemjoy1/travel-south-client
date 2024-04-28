@@ -4,10 +4,13 @@ import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import useAuth from "../hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoIosEyeOff, IoMdEye } from "react-icons/io";
+import { useState } from "react";
 
 const Login = () => {
   const { signInUser } = useAuth();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
@@ -53,21 +56,26 @@ const Login = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              type="password"
-              placeholder="password"
-              className="input input-bordered"
-              name="password"
-              {...register("password", { required: true })}
-            />
+            <div className=" relative ">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="password"
+                className="input input-bordered w-full"
+                {...register("password", {
+                  required: true,
+                })}
+              />
+              <span
+                className=" absolute top-4 right-4"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <IoMdEye /> : <IoIosEyeOff />}
+              </span>
+            </div>
             {errors.password && (
-              <span className=" text-red-600">This field is required</span>
+              <span className=" text-red-500">{errors.password.message}</span>
             )}
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-neutral">Login</button>
