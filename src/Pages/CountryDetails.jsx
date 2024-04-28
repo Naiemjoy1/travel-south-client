@@ -48,14 +48,16 @@ const CountryDetails = () => {
             </h1>
           </div>
         </div>
-        <div className=" flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
+        <div className=" lg:flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
           <div className=" flex items-center gap-5">
             <a className=" text-[#5c98f2] text-4xl" href="">
               <FaPaperPlane />
             </a>
             <div>
               <p>Package</p>
-              <p className=" text-xl font-semibold">{spots.length} Available</p>
+              <p className=" lg:text-xl font-semibold">
+                {spots.length} Available
+              </p>
             </div>
           </div>
           <div className=" flex items-center gap-5">
@@ -64,7 +66,7 @@ const CountryDetails = () => {
             </a>
             <div>
               <p>Call Us</p>
-              <p className=" text-xl font-semibold">+485 257 294</p>
+              <p className=" lg:text-xl font-semibold">+485 257 294</p>
             </div>
           </div>
           <div className=" flex items-center gap-5">
@@ -73,25 +75,25 @@ const CountryDetails = () => {
             </a>
             <div>
               <p>Email Us</p>
-              <p className=" text-xl font-semibold">southtravel@gmail.com</p>
+              <p className=" lg:text-xl font-semibold">southtravel@gmail.com</p>
             </div>
           </div>
         </div>
       </div>
-      <div className=" flex items-center gap-10 justify-center mt-36 px-10">
-        <div className="flex items-center gap-10 w-2/4">
+      <div className=" lg:flex items-center gap-10 justify-center mt-36 lg:px-10 px-5">
+        <div className="lg:flex items-center gap-10 lg:w-2/4">
           <img
-            className="w-[300px] h-[450px]"
+            className="lg:w-[300px] h-[450px]"
             src="https://i.ibb.co/nP29gtV/pexels-mickyiaia34-709478.jpg"
             alt=""
           />
           <img
-            className="w-[255px] h-[550px]"
+            className="lg:w-[255px] h-[550px] mt-4 lg:mt-0"
             src="https://i.ibb.co/hBzrP03/pexels-elletakesphotos-1680173.jpg"
             alt=""
           />
         </div>
-        <div className=" w-2/4">
+        <div className="mt-5 text-center lg:w-2/4">
           <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
             A Guide to Your Next Adventure
           </h2>
@@ -107,13 +109,13 @@ const CountryDetails = () => {
           <button className=" btn  bg-[#5c98f2] text-white">Contact Us</button>
         </div>
       </div>
-      <div className=" mt-16 text-center">
+      <div className=" mt-16 text-center px-5 lg:px-10">
         <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
           Check All
         </h2>
         <h2 className=" font-poppins font-bold text-5xl mb-4">Package</h2>
       </div>
-      <div className=" grid grid-cols-3 justify-center items-center gap-5 mt-14">
+      <div className=" grid lg:grid-cols-3 justify-center items-center gap-5 mt-14 px-5 lg:px-10">
         {spots.map((spot) => (
           <CountryCard key={spot._id} spot={spot}></CountryCard>
         ))}

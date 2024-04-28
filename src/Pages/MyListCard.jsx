@@ -97,7 +97,7 @@ const MyListCard = ({ spot }) => {
             </Link>
             <button
               onClick={() => handleDelete(_id)}
-              className="btn  bg-[#5c98f2] text-white"
+              className="btn  bg-red-600 text-white"
             >
               Delete
             </button>

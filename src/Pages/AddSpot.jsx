@@ -77,9 +77,9 @@ const AddSpot = () => {
             />
           </div>
         </div>
-        <div className=" flex gap-4">
+        <div className=" lg:flex gap-4">
           {/* row 2 */}
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Tourists Spot Name</span>
             </label>
@@ -90,7 +90,7 @@ const AddSpot = () => {
               name="tourists_spot_name"
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Country Name</span>
             </label>
@@ -107,9 +107,9 @@ const AddSpot = () => {
             </select>
           </div>
         </div>
-        <div className=" flex gap-4">
+        <div className=" lg:flex gap-4">
           {/* row 3 */}
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Location</span>
             </label>
@@ -120,7 +120,7 @@ const AddSpot = () => {
               name="location"
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Short Description</span>
             </label>
@@ -132,9 +132,9 @@ const AddSpot = () => {
             />
           </div>
         </div>
-        <div className=" flex gap-4">
+        <div className=" lg:flex gap-4">
           {/* row 4 */}
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Average Cost</span>
             </label>
@@ -145,7 +145,7 @@ const AddSpot = () => {
               name="average_cost"
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Seasonality</span>
             </label>
@@ -158,9 +158,9 @@ const AddSpot = () => {
             </select>
           </div>
         </div>
-        <div className=" flex gap-4">
+        <div className=" lg:flex gap-4">
           {/* row 5 */}
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Travel Time</span>
             </label>
@@ -171,7 +171,7 @@ const AddSpot = () => {
               name="travel_time"
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Total Visitors Per Year</span>
             </label>
@@ -183,9 +183,9 @@ const AddSpot = () => {
             />
           </div>
         </div>
-        <div className=" flex gap-4">
+        <div className=" lg:flex gap-4">
           {/* row 5 */}
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">User Email</span>
             </label>
@@ -198,7 +198,7 @@ const AddSpot = () => {
               value={user.email}
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 w-full">
             <label className="label">
               <span className="label-text">User Name</span>
             </label>

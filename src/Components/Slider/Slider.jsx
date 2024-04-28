@@ -16,7 +16,7 @@ import "swiper/css/autoplay";
 
 const Slider = () => {
   return (
-    <div className="min-h-[calc(100vh-246px)]">
+    <div>
       <Swiper
         spaceBetween={10}
         slidesPerView={2}

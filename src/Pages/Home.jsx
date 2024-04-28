@@ -8,12 +8,12 @@ import SpotsHome from "./SpotsHome";
 const Home = () => {
   return (
     <div className="">
-      <div className=" flex justify-center items-center my-10">
-        <div className=" w-2/5 flex">
-          <Typewriter></Typewriter>
-        </div>
-        <div className=" w-3/5 ">
+      <div className=" lg:flex flex-row-reverse justify-center items-center lg:gap-10 my-10 mx-10 ">
+        <div className=" lg:w-3/5 ">
           <Slider></Slider>
+        </div>
+        <div className=" mt-5 lg:mt-0 lg:w-2/5 flex">
+          <Typewriter></Typewriter>
         </div>
       </div>
       <div>

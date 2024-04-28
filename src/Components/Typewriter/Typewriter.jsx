@@ -16,7 +16,7 @@ const Typewriter = () => {
   });
   return (
     <div>
-      <h1 className=" font-poppins text-5xl font-bold text-left">
+      <h1 className=" font-poppins lg:text-6xl text-4xl font-bold text-left">
         Find <br />
         Next Place <br />
         To <span className=" text-[#5c98f2]">{typeEffect}</span>

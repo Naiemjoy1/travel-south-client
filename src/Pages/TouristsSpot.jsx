@@ -23,7 +23,7 @@ const TouristsSpot = () => {
   });
 
   return (
-    <div className=" mt-10">
+    <div className=" mt-10 mb-10">
       <div className=" text-center mb-5">
         <select onChange={(e) => handleSort(e.target.value)} value={sortOrder}>
           <option value="">Sort by Cost</option>
@@ -31,7 +31,7 @@ const TouristsSpot = () => {
           <option value="descending">Highest to Lowest</option>
         </select>
       </div>
-      <div className="grid grid-cols-3 gap-5 p-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 px-5 lg:px-10">
         {sortedSpots.map((spot) => (
           <TouristsSpotCard key={spot._id} spot={spot} />
         ))}

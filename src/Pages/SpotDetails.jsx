@@ -23,10 +23,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
+import { WiDayCloudyWindy } from "react-icons/wi";
+import { MdOutlinePeopleAlt } from "react-icons/md";
+import { BsClock } from "react-icons/bs";
+import { useMediaQuery } from "@react-hook/media-query";
 
 const SpotDetails = () => {
   const spot = useLoaderData();
   const [spotsData, setSpotsData] = useState([]);
+
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,7 +71,7 @@ const SpotDetails = () => {
       <div className=" w-full ">
         <img className=" w-full h-[500px]" src={image} alt="" />
         <div className=" h-52 bg-gray-100 flex items-center p-10 mb-14">
-          <div className=" w-2/5">
+          <div className=" lg:w-2/5">
             <p className=" text-4xl font-poppins font-semibold mb-2">
               {tourists_spot_name}
             </p>
@@ -76,10 +82,10 @@ const SpotDetails = () => {
               {country_Name}
             </p>
           </div>
-          <div className=" flex items-center gap-14">
+          <div className=" lg:flex grid grid-cols-1 items-center lg:gap-14">
             <div className="flex items-center gap-4">
               <span className=" text-5xl text-[#5c98f2]">
-                <AiFillClockCircle />
+                <BsClock />
               </span>
               <div>
                 <p className="text-gray-500">Durations</p>
@@ -90,7 +96,7 @@ const SpotDetails = () => {
             </div>
             <div className="flex items-center gap-4">
               <span className=" text-5xl text-[#5c98f2]">
-                <AiFillClockCircle />
+                <WiDayCloudyWindy />
               </span>
               <div>
                 <p className="text-gray-500">Season</p>
@@ -101,7 +107,7 @@ const SpotDetails = () => {
             </div>
             <div className="flex items-center gap-4">
               <span className=" text-5xl text-[#5c98f2]">
-                <AiFillClockCircle />
+                <MdOutlinePeopleAlt />
               </span>
               <div>
                 <p className="text-gray-500">Visitors Per Year</p>
@@ -112,8 +118,8 @@ const SpotDetails = () => {
             </div>
           </div>
         </div>
-        <div className=" flex  gap-10 px-10">
-          <div className="  w-3/5">
+        <div className=" lg:flex  gap-10 px-10">
+          <div className="  lg:w-3/5">
             <div>
               <p className=" mb-4 text-2xl font-poppins font-semibold">
                 Enjoy the Adventure
@@ -199,7 +205,7 @@ const SpotDetails = () => {
               </p>
             </div>
           </div>
-          <div className="  w-2/5">
+          <div className="  lg:w-2/5">
             <div className="card  bg-base-100 shadow-xl">
               <div className="card-body">
                 <div className=" flex items-center justify-between">
@@ -298,8 +304,8 @@ const SpotDetails = () => {
         <div className=" mt-10 mb-10">
           <Swiper
             spaceBetween={10}
-            slidesPerView={3}
-            // navigation={true}
+            slidesPerView={isMobile ? 1 : 3}
+            navigation={isMobile ? true : false}
             autoplay={{ delay: 3000 }}
             loop={true}
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

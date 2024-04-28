@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div>
       <div
-        className=" flex justify-center items-center bg-[#5c98f2] py-32 px-10 gap-20 font-poppins"
+        className=" lg:flex justify-center items-center bg-[#5c98f2] lg:py-32 py-16 px-10 gap-20 font-poppins"
         style={{
           backgroundImage:
             "url(https://i.ibb.co/5G06kfd/73404-landmark-horizon-metropolis-skyline-night-2560x1440.jpg)",
@@ -15,11 +15,11 @@ const Footer = () => {
           backgroundSize: "cover",
         }}
       >
-        <p className=" w-2/4 text-5xl text-white font-poppins font-bold">
+        <p className=" lg:w-2/4 lg:text-5xl text-2xl text-center lg:text-left text-white font-poppins font-bold">
           Travel beyond your imagination, with our Travel Agency!
         </p>
 
-        <div className=" grid grid-cols-3 justify-center items-center w-2/4 text-white">
+        <div className=" grid lg:grid-cols-3 grid-cols-2 justify-center items-center mt-5 lg:mt-0 lg:w-2/4 text-white">
           <ul className="grid grid-cols-1 gap-4">
             <li className=" text-xl font-semibold">Address</li>
             <li>1080 Brickell Ave</li>
@@ -42,7 +42,7 @@ const Footer = () => {
             <button className=" btn bg-[#5c98f2] border-none text-white">
               info@southtravel.com
             </button>
-            <p className=" font-semibold text-2xl">+01 483 593 284</p>
+            <p className=" font-semibold lg:text-2xl">+01 483 593 284</p>
             <p className=" text-white flex items-center gap-4">
               <span>
                 <FaRegCopyright />
