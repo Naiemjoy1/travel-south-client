@@ -74,8 +74,14 @@ const routes = createBrowserRouter([
           fetch(`http://localhost:5001/spot/${params.id}`),
       },
       {
-        path: "/country",
-        element: <CountryDetails></CountryDetails>,
+        path: "/country/:countryName",
+        element: (
+          <PrivateRoute>
+            <CountryDetails></CountryDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/spot/country/${params.countryName}`),
       },
     ],
   },
