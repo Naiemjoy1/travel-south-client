@@ -17,7 +17,7 @@
 
 - Banner
 - Tourists Spots Section
-- - Here show 6 cards of tourists soots
-- - Cards has details button, so can see card full details
+  - Here show 6 cards of tourists soots
+  - Cards has details button, so can see card full details
 - Countries
-- - Here show all countries in slider
+  - Here show all countries in slider
