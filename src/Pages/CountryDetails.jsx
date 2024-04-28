@@ -48,7 +48,7 @@ const CountryDetails = () => {
             </h1>
           </div>
         </div>
-        <div className=" lg:flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
+        <div className=" lg:flex md:flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
           <div className=" flex items-center gap-5">
             <a className=" text-[#5c98f2] text-4xl" href="">
               <FaPaperPlane />
@@ -81,14 +81,14 @@ const CountryDetails = () => {
         </div>
       </div>
       <div className=" lg:flex items-center gap-10 justify-center mt-36 lg:px-10 px-5">
-        <div className="lg:flex items-center gap-10 lg:w-2/4">
+        <div className="lg:flex md:flex items-center justify-center gap-10 lg:w-2/4">
           <img
-            className="lg:w-[300px] h-[450px]"
+            className="lg:w-[300px] md:w-[300px] h-[450px]"
             src="https://i.ibb.co/nP29gtV/pexels-mickyiaia34-709478.jpg"
             alt=""
           />
           <img
-            className="lg:w-[255px] h-[550px] mt-4 lg:mt-0"
+            className="lg:w-[255px] md:w-[255px] h-[550px] mt-4 lg:mt-0"
             src="https://i.ibb.co/hBzrP03/pexels-elletakesphotos-1680173.jpg"
             alt=""
           />
@@ -115,7 +115,7 @@ const CountryDetails = () => {
         </h2>
         <h2 className=" font-poppins font-bold text-5xl mb-4">Package</h2>
       </div>
-      <div className=" grid lg:grid-cols-3 justify-center items-center gap-5 mt-14 px-5 lg:px-10">
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center gap-5 mt-14 px-5 lg:px-10">
         {spots.map((spot) => (
           <CountryCard key={spot._id} spot={spot}></CountryCard>
         ))}

@@ -97,7 +97,7 @@ const UpdateSpot = () => {
             />
           </div>
         </div>
-        <div className=" lg:flex gap-4">
+        <div className=" lg:flex md:flex gap-4">
           {/* row 2 */}
           <div className="form-control lg:w-1/2 w-full">
             <label className="label">
@@ -132,7 +132,7 @@ const UpdateSpot = () => {
             </select>
           </div>
         </div>
-        <div className=" lg:flex gap-4">
+        <div className=" lg:flex md:flex gap-4">
           {/* row 3 */}
           <div className="form-control lg:w-1/2 w-full">
             <label className="label">
@@ -159,7 +159,7 @@ const UpdateSpot = () => {
             />
           </div>
         </div>
-        <div className=" lg:flex gap-4">
+        <div className=" lg:flex md:flex gap-4">
           {/* row 4 */}
           <div className="form-control lg:w-1/2 w-full">
             <label className="label">
@@ -190,7 +190,7 @@ const UpdateSpot = () => {
             </select>
           </div>
         </div>
-        <div className=" lg:flex gap-4">
+        <div className=" lg:flex md:flex gap-4">
           {/* row 5 */}
           <div className="form-control lg:w-1/2 w-full">
             <label className="label">
@@ -217,7 +217,7 @@ const UpdateSpot = () => {
             />
           </div>
         </div>
-        <div className=" lg:flex gap-4">
+        <div className=" lg:flex md:flex gap-4">
           {/* row 5 */}
           <div className="form-control lg:w-1/2 w-full">
             <label className="label">

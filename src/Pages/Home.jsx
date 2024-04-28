@@ -8,7 +8,7 @@ import SpotsHome from "./SpotsHome";
 const Home = () => {
   return (
     <div className="">
-      <div className=" lg:flex flex-row-reverse justify-center items-center lg:gap-10 my-10 mx-10 ">
+      <div className=" lg:flex flex-row-reverse justify-center items-center lg:gap-10 my-10 lg:px-10 md:px-10 px-5 ">
         <div className=" lg:w-3/5 ">
           <Slider></Slider>
         </div>

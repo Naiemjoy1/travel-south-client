@@ -31,7 +31,7 @@ const TouristsSpot = () => {
           <option value="descending">Highest to Lowest</option>
         </select>
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 px-5 lg:px-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 lg:px-10">
         {sortedSpots.map((spot) => (
           <TouristsSpotCard key={spot._id} spot={spot} />
         ))}

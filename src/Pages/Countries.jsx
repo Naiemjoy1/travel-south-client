@@ -23,6 +23,7 @@ import { useMediaQuery } from "@react-hook/media-query";
 const Countries = () => {
   const [spotsData, setSpotsData] = useState([]);
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const isMedium = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,8 +46,20 @@ const Countries = () => {
     ...new Set(spotsData.map((spot) => spot.country_Name)),
   ];
 
+  const getSlidesPerView = () => {
+    if (isMobile) return 1;
+    if (isMedium) return 3;
+    return 4;
+  };
+
+  const getNavigation = () => {
+    if (isMobile) return true;
+    if (isMedium) return true;
+    return false;
+  };
+
   return (
-    <div className=" mx-10">
+    <div className=" lg:px-10 md:px-10 px-5">
       <Fade delay={1e2}>
         <div className=" lg:w-3/6 text-center lg:text-left">
           <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
@@ -69,8 +82,8 @@ const Countries = () => {
         <div className=" mt-10 mb-10">
           <Swiper
             spaceBetween={15}
-            slidesPerView={isMobile ? 1 : 4}
-            navigation={isMobile ? true : false}
+            slidesPerView={getSlidesPerView()}
+            navigation={getNavigation()}
             autoplay={{ delay: 3000 }}
             loop={true}
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

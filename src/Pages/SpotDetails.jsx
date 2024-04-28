@@ -33,6 +33,7 @@ const SpotDetails = () => {
   const [spotsData, setSpotsData] = useState([]);
 
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const isMedium = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,12 +67,19 @@ const SpotDetails = () => {
     user_email,
     user_name,
   } = spot;
+
+  const getSlidesPerView = () => {
+    if (isMobile) return 1;
+    if (isMedium) return 2;
+    return 4;
+  };
+
   return (
     <div className=" mb-10">
       <div className=" w-full ">
         <img className=" w-full h-[500px]" src={image} alt="" />
-        <div className=" h-52 bg-gray-100 flex items-center p-10 mb-14">
-          <div className=" lg:w-2/5">
+        <div className=" h-52 bg-gray-100 flex items-center lg:px-10 md:px-10 px-5 mb-14">
+          <div className=" lg:w-2/5 md:w-2/5">
             <p className=" text-4xl font-poppins font-semibold mb-2">
               {tourists_spot_name}
             </p>
@@ -82,7 +90,7 @@ const SpotDetails = () => {
               {country_Name}
             </p>
           </div>
-          <div className=" lg:flex grid grid-cols-1 items-center lg:gap-14">
+          <div className=" lg:flex md:flex grid grid-cols-1 items-center lg:gap-14 md:gap-5">
             <div className="flex items-center gap-4">
               <span className=" text-5xl text-[#5c98f2]">
                 <BsClock />
@@ -304,7 +312,7 @@ const SpotDetails = () => {
         <div className=" mt-10 mb-10">
           <Swiper
             spaceBetween={10}
-            slidesPerView={isMobile ? 1 : 3}
+            slidesPerView={getSlidesPerView()}
             navigation={isMobile ? true : false}
             autoplay={{ delay: 3000 }}
             loop={true}

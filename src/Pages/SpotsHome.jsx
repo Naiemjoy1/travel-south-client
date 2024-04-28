@@ -83,7 +83,7 @@ const SpotsHome = () => {
       <Fade delay={1e2}>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10">
           <div
-            className="h-[120px] rounded-xl flex items-center p-10"
+            className="h-[120px] rounded-xl flex items-center lg:px-10 md:px-10 px-5"
             style={{
               backgroundImage: "url(https://i.ibb.co/KKpb3bn/banner-01.jpg)",
               backgroundSize: "cover", // Add this line
@@ -117,7 +117,7 @@ const SpotsHome = () => {
             </h2>
           </div>
           <div
-            className="h-[120px] rounded-xl flex items-center p-10"
+            className="h-[120px] rounded-xl flex items-center lg:px-10 md:px-10 px-5"
             style={{
               backgroundImage: "url(https://i.ibb.co/yQWVTwT/banner-05.jpg)",
               backgroundSize: "cover", // Add this line
@@ -136,7 +136,7 @@ const SpotsHome = () => {
         </div>
       </Fade>
       <Fade delay={1e2}>
-        <div className=" grid lg:grid-cols-3 grid-cols-1 gap-4 items-center justify-between mt-10">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 items-center justify-between mt-10">
           {shuffleArray(shuffleSpots(spotsData))
             .slice(0, 6)
             .map((spot, index) => (
