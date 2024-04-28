@@ -41,6 +41,15 @@
 - Here show all travel packages
 - Can sort packages by low to high or high to low price
 
+### My List
+
+- Show packages those added by exiting user
+- This private route
+- In package card there is Delete and Update button
+  - When user delete any card it will remove that card and show remaining cards
+  - When press update button it will redirect to update page
+    - User card updated exiting information's
+
 ### Login
 
 - Can login registered email and password
@@ -53,3 +62,19 @@
 ### Theme Control
 
 - Can change dark mood or light mood
+
+### Tourists Spots Details Page
+
+- Show all details for this travel spot
+- Add a slider that will show other packages
+
+### Countries Details
+
+- Show details for this country
+- Show offered packages for this country
+
+### Footer
+
+- Address
+- Social Links
+- Contact information's
