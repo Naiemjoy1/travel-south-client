@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import TouristsSpotCard from "./TouristsSpotCard";
 import useAuth from "../hooks/useAuth";
@@ -6,8 +6,9 @@ import MyListCard from "./MyListCard";
 
 const MyList = () => {
   const { user } = useAuth();
-  const spots = useLoaderData();
   const [sortOrder, setSortOrder] = useState("");
+  const [spots, setSpots] = useState([]);
+  const [cards, setCards] = useState([]);
 
   const handleSort = (order) => {
     setSortOrder(order);
@@ -26,11 +27,42 @@ const MyList = () => {
     }
     return 0;
   });
+
+  useEffect(() => {
+    // Fetch data from server and set it to state
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5001/spot");
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setSpots(data);
+        setCards(data); // Initialize cards state with fetched data
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleDeleteSpot = (deletedSpotId) => {
+    setSpots(spots.filter((spot) => spot._id !== deletedSpotId));
+    setCards(cards.filter((card) => card._id !== deletedSpotId)); // Update cards state
+  };
+
   return (
     <div className=" mt-10 mb-10">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 lg:px-10">
         {sortedSpots.map((spot) => (
-          <MyListCard key={spot._id} spot={spot}></MyListCard>
+          <MyListCard
+            key={spot._id}
+            spot={spot}
+            cards={cards}
+            setCards={setCards}
+            onDelete={handleDeleteSpot}
+          ></MyListCard>
         ))}
       </div>
     </div>

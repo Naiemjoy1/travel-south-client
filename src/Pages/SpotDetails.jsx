@@ -71,7 +71,7 @@ const SpotDetails = () => {
   const getSlidesPerView = () => {
     if (isMobile) return 1;
     if (isMedium) return 2;
-    return 4;
+    return 3;
   };
 
   return (
@@ -311,7 +311,7 @@ const SpotDetails = () => {
         </div> */}
         <div className=" mt-10 mb-10">
           <Swiper
-            spaceBetween={10}
+            spaceBetween={20}
             slidesPerView={getSlidesPerView()}
             navigation={isMobile ? true : false}
             autoplay={{ delay: 3000 }}

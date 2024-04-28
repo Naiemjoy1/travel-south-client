@@ -81,7 +81,7 @@ const Countries = () => {
       <Fade delay={1e2}>
         <div className=" mt-10 mb-10">
           <Swiper
-            spaceBetween={15}
+            spaceBetween={20}
             slidesPerView={getSlidesPerView()}
             navigation={getNavigation()}
             autoplay={{ delay: 3000 }}

@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { TbClockFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyListCard = ({ spot }) => {
+const MyListCard = ({ spot, cards, setCards, onDelete }) => {
   const {
     _id,
     image,
@@ -43,6 +44,10 @@ const MyListCard = ({ spot }) => {
                 text: "Your Spot has been deleted.",
                 icon: "success",
               });
+              // const remaining = cards.filter((card) => card._id !== _id);
+              // setCards(remaining);
+              // console.log(remaining);
+              onDelete(spot._id);
             }
           });
       }
@@ -80,14 +85,12 @@ const MyListCard = ({ spot }) => {
                   {total_visitors_per_year}
                 </span>
               </p>
-              {/* <p>{total_visitors_per_year}</p> */}
             </div>
             <div>
               <p className=" text-gray-500">
                 Season:{" "}
                 <span className=" text-black font-bold">{seasonality}</span>
               </p>
-              {/* <p>{seasonality}</p> */}
             </div>
           </div>
           <div className="divider"></div>
