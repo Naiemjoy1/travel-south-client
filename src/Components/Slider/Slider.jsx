@@ -21,7 +21,7 @@ const Slider = () => {
         spaceBetween={10}
         slidesPerView={2}
         navigation={true}
-        // autoplay={{ delay: 2000 }}
+        autoplay={{ delay: 2000 }}
         loop={true}
         // pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
