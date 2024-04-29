@@ -4,7 +4,7 @@ const CountrySlider = ({ spot }) => {
   const { _id, image, country_Name } = spot;
 
   const backgroundImageURLs = {
-    Bangladesh: "https://i.ibb.co/g4yV4cC/Awesome-look-of-Lalbagh-Fort.jpg",
+    Bangladesh: "https://i.ibb.co/3Np4b4v/7488236572-def1c8d2a9-b.jpg",
     Thailand:
       "https://i.ibb.co/X4N68jP/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg",
     Indonesia: "https://i.ibb.co/pbjbh8k/indonesia-best-islands-bali.jpg",

@@ -16,7 +16,6 @@ const SpotsHome = () => {
         }
         const data = await response.json();
         setSpotsData(data);
-        console.log(data); // Set the fetched data in state
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -25,7 +24,6 @@ const SpotsHome = () => {
     fetchData();
   }, []);
 
-  // Function to shuffle array elements randomly
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

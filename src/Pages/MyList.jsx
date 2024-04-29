@@ -9,6 +9,7 @@ const MyList = () => {
   const [sortOrder, setSortOrder] = useState("");
   const [spots, setSpots] = useState([]);
   const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = "My List";
@@ -18,7 +19,6 @@ const MyList = () => {
     setSortOrder(order);
   };
 
-  // Check if user exists before accessing its properties
   const filteredSpots = user
     ? spots.filter((spot) => spot.user_email === user.email)
     : [];
@@ -33,7 +33,6 @@ const MyList = () => {
   });
 
   useEffect(() => {
-    // Fetch data from server and set it to state
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -44,9 +43,11 @@ const MyList = () => {
         }
         const data = await response.json();
         setSpots(data);
-        setCards(data); // Initialize cards state with fetched data
+        setCards(data);
       } catch (error) {
         console.error("Error fetching data:", error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -55,8 +56,18 @@ const MyList = () => {
 
   const handleDeleteSpot = (deletedSpotId) => {
     setSpots(spots.filter((spot) => spot._id !== deletedSpotId));
-    setCards(cards.filter((card) => card._id !== deletedSpotId)); // Update cards state
+    setCards(cards.filter((card) => card._id !== deletedSpotId));
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div>
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className=" mt-10 mb-10">

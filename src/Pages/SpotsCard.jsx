@@ -21,7 +21,7 @@ const SpotsCard = ({ spot }) => {
   // Extract the first 20 words of the short description
   const shortDescriptionPreview = short_description
     .split(" ")
-    .slice(0, 8)
+    .slice(0, 10)
     .join(" ");
 
   return (
