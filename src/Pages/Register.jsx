@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,7 +12,10 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const from = "/";
-  //   console.log(createUser);
+
+  useEffect(() => {
+    document.title = "Register";
+  }, []);
 
   const passwordValidation = (value) => {
     const regexUpperCase = /[A-Z]/;

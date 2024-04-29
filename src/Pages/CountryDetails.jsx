@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData, useLocation, useParams } from "react-router-dom";
 import CountryCard from "./CountryCard";
 import { FaPaperPlane } from "react-icons/fa6";
@@ -10,26 +10,31 @@ const CountryDetails = () => {
   const location = useLocation();
   const { countryName } = useParams();
 
+  useEffect(() => {
+    document.title = "Country Details";
+  }, []);
+
   let backgroundImageURL = "";
   if (countryName === "Bangladesh") {
     backgroundImageURL =
-      "https://i.ibb.co/X4N68jP/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg";
+      "https://i.ibb.co/LhvYXDf/6491872d1f962c001de086fa.jpg";
   } else if (countryName === "Thailand") {
     backgroundImageURL =
-      "https://i.ibb.co/mNyvMg8/krabi-thailand-best-things-to-do.jpg";
+      "https://i.ibb.co/X4N68jP/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg";
   } else if (countryName === "Indonesia") {
-    backgroundImageURL = "https://i.ibb.co/LYXYhrJ/Bangkok.jpg";
+    backgroundImageURL = "https://i.ibb.co/bzbR123/bali-jack.webp";
   } else if (countryName === "Malaysia") {
     backgroundImageURL =
-      "https://i.ibb.co/f0gsqxr/istockphoto-588618834-612x612.jpg";
+      "https://i.ibb.co/Jn9gNsP/240-petronas-twin-towersjpg.jpg";
   } else if (countryName === "Vietnam") {
     backgroundImageURL =
-      "https://i.ibb.co/GVdnkdV/Chiang-Mai-Take-Me-Tour-3-e1525774746926.jpg";
+      "https://i.ibb.co/b6YmNYw/Asian-woman-wearing-Vietnam-culture-traditional-at-Trang-An-Vietnam-1.jpg";
   } else if (countryName === "Cambodia") {
-    backgroundImageURL = "https://i.ibb.co/nsBvpF0/Ayutthaya-Shutterstock.webp";
+    backgroundImageURL =
+      "https://i.ibb.co/3W6M6Hp/Angkor-Wat-temple-complex-Camb.webp";
   } else {
     backgroundImageURL =
-      "https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg";
+      "https://i.ibb.co/10GQbjQ/pexels-asad-photo-maldives-1266831.jpg";
   }
 
   return (

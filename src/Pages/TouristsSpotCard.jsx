@@ -26,9 +26,10 @@ const TouristsSpotCard = ({ spot }) => {
   return (
     <div className="">
       <div className="card shadow-lg">
-        <figure className=" h-[250px] relative">
-          <img className=" object-cover" src={image} alt="image" />
+        <figure className="h-[250px] relative">
+          <img className="object-cover w-full h-full" src={image} alt="image" />
         </figure>
+
         <a className="bg-[#1e2d59] text-white absolute top-4 right-6 flex justify-between items-center gap-2 px-4 py-1 rounded-badge">
           <span>
             <TbClockFilled />

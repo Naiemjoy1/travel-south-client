@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 
@@ -36,7 +37,11 @@ const AddSpot = () => {
       user_name,
     };
 
-    console.log(newSpot);
+    useEffect(() => {
+      document.title = "Add Spot";
+    }, []);
+
+    // console.log(newSpot);
 
     // send data to server
     fetch("https://assaignment-server.vercel.app/spot", {

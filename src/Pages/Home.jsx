@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Feedback from "../Components/Feedback/Feedback";
 import PackagePrice from "../Components/PackagePrice/PackagePrice";
 import Slider from "../Components/Slider/Slider";
@@ -6,6 +7,10 @@ import Countries from "./Countries";
 import SpotsHome from "./SpotsHome";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+
   return (
     <div className="">
       <div className=" lg:flex flex-row-reverse justify-center items-center lg:gap-10 my-10 lg:px-10 md:px-10 px-5 ">

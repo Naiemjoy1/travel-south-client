@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import TouristsSpotCard from "./TouristsSpotCard";
 import useAuth from "../hooks/useAuth";
 
 const TouristsSpot = () => {
   const { user } = useAuth();
-  console.log(user);
+
+  useEffect(() => {
+    document.title = "Tourists Spot";
+  }, []);
+
+  // console.log(user);
   const spots = useLoaderData();
   const [sortOrder, setSortOrder] = useState("");
 

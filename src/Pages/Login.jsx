@@ -5,12 +5,16 @@ import useAuth from "../hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const { signInUser } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
 
   const {
     register,

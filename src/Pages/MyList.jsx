@@ -10,6 +10,10 @@ const MyList = () => {
   const [spots, setSpots] = useState([]);
   const [cards, setCards] = useState([]);
 
+  useEffect(() => {
+    document.title = "My List";
+  }, []);
+
   const handleSort = (order) => {
     setSortOrder(order);
   };

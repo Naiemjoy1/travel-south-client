@@ -36,6 +36,10 @@ const SpotDetails = () => {
   const isMedium = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
 
   useEffect(() => {
+    document.title = "Spot Details";
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
