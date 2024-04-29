@@ -28,23 +28,6 @@ const TouristsSpot = () => {
     setSortByCountry(country);
   };
 
-  const shuffleArray = (array) => {
-    let currentIndex = array.length,
-      randomIndex;
-
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
-    }
-
-    return array;
-  };
-
   let sortedSpots = spots.slice();
 
   if (sortOrder === "ascending") {
@@ -58,8 +41,6 @@ const TouristsSpot = () => {
       (spot) => spot.country_Name === sortByCountry
     );
   }
-
-  sortedSpots = shuffleArray(sortedSpots);
 
   const countryOptions = [
     "Bangladesh",
