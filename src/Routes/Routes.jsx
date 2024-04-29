@@ -34,10 +34,7 @@ const routes = createBrowserRouter([
       {
         path: "/tourspot",
         element: <TouristsSpot></TouristsSpot>,
-        loader: () =>
-          fetch(
-            "https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot"
-          ),
+        loader: () => fetch("https://assaignment-server.vercel.app/spot"),
       },
       {
         path: "/addspot",
@@ -54,10 +51,7 @@ const routes = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            "https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot"
-          ),
+        loader: () => fetch("https://assaignment-server.vercel.app/spot"),
       },
       {
         path: "/spot/:id",
@@ -67,9 +61,7 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot/${params.id}`
-          ),
+          fetch(`https://assaignment-server.vercel.app/spot/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -79,16 +71,14 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot/${params.id}`
-          ),
+          fetch(`https://assaignment-server.vercel.app/spot/${params.id}`),
       },
       {
         path: "/country/:countryName",
         element: <CountryDetails></CountryDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot/country/${params.countryName}`
+            `https://assaignment-server.vercel.app/spot/country/${params.countryName}`
           ),
       },
     ],

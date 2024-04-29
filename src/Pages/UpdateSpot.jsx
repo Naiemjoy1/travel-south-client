@@ -57,16 +57,13 @@ const UpdateSpot = () => {
     // console.log(newSpot);
 
     // send data to server
-    fetch(
-      `https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedSpot),
-      }
-    )
+    fetch(`https://assaignment-server.vercel.app/spot/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedSpot),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

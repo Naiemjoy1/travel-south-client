@@ -39,16 +39,13 @@ const AddSpot = () => {
     console.log(newSpot);
 
     // send data to server
-    fetch(
-      "https://assaignment-server-dysatxwtr-naiem-hasans-projects.vercel.app/spot",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newSpot),
-      }
-    )
+    fetch("https://assaignment-server.vercel.app/spot", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newSpot),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
