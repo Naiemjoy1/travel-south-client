@@ -64,7 +64,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
+          <Link to="/" className="btn btn-ghost lg:text-xl md:text-lg">
             South <span className="text-[#5c98f2]">Travel</span>
           </Link>
         </div>
