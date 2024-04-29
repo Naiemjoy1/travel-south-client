@@ -56,7 +56,7 @@ const SpotsCard = ({ spot }) => {
           </div>
           <div className=" flex justify-between items-center">
             <Link to={`/spot/${_id}`}>
-              <button className="btn border-none bg-primary text-white">
+              <button className="btn border-none bg-primary hover:bg-secondary text-white">
                 Details
               </button>
             </Link>
