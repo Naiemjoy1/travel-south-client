@@ -13,7 +13,7 @@ const TouristsSpot = () => {
     document.title = "Tourists Spot";
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 100);
 
     return () => clearTimeout(delay);
   }, []);
