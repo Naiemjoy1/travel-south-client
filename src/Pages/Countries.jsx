@@ -66,20 +66,20 @@ const Countries = () => {
     <div className=" lg:px-10 md:px-10 px-5">
       <Fade delay={1e2}>
         <div className=" lg:w-3/6 text-center lg:text-left">
-          <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
+          <h2 className=" font-reenie text-primary font-bold text-3xl mb-4">
             Next Adventure
           </h2>
           <h2 className=" font-poppins font-bold text-5xl mb-4">
             Travel Destinations Available Worldwide
           </h2>
-          <h2 className=" mb-4 text-gray-500">
+          <h2 className=" mb-4 ">
             We have compiled a list of top destinations across the globe,
             scoured the world for the most alluring and fascinating places to
             visit. From the beautiful beaches of the Caribbean to the majestic
             mountains of Europe and the vibrant cities of Asia, our destination
             list has something for everyone.
           </h2>
-          <button className=" btn  bg-[#5c98f2] text-white">More Info</button>
+          <button className=" btn  bg-primary text-white">More Info</button>
         </div>
       </Fade>
       {loading ? ( // Show loading indicator if data is still loading

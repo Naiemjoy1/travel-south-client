@@ -54,7 +54,7 @@ const Feedback = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-              <div className=" bg-[#5c98f2] rounded-xl p-10 text-white font-poppins h-[250px]">
+              <div className=" bg-primary rounded-xl p-10 text-white font-poppins h-[250px]">
                 <p className=" font-light lg:text-2xl text-center lg:text-left">
                   This travel agency made my dream trip to Europe a reality.
                   They worked with me every step of the way to plan the
@@ -74,7 +74,7 @@ const Feedback = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className=" bg-[#5c98f2] rounded-xl p-10 text-white font-poppins h-[250px]">
+              <div className=" bg-primary rounded-xl p-10 text-white font-poppins h-[250px]">
                 <p className=" font-light lg:text-2xl text-center lg:text-left">
                   I recently booked a trip to Thailand with this travel agency
                   and I couldn't have been happier with my experience.
@@ -93,7 +93,7 @@ const Feedback = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className=" bg-[#5c98f2] rounded-xl p-10 text-white font-poppins h-[250px]">
+              <div className=" bg-primary rounded-xl p-10 text-white font-poppins h-[250px]">
                 <p className=" font-light lg:text-2xl text-center lg:text-left">
                   My husband and I have been using this travel agency for years
                   and they have never disappointed us.

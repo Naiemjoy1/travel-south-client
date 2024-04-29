@@ -69,20 +69,20 @@ const SpotsHome = () => {
   return (
     <div className="my-10 mx-10">
       <div className="lg:w-3/6 text-center lg:text-left">
-        <h2 className="font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
+        <h2 className="font-reenie text-primary font-bold text-3xl mb-4">
           Dream Vacation Destination
         </h2>
         <h2 className="font-poppins font-bold text-5xl mb-4">
           Plan the Trip of a Lifetime <br />
           with Ease
         </h2>
-        <h2 className="mb-4 text-gray-500">
+        <h2 className="mb-4 ">
           Whether you're looking for a romantic getaway, a family-friendly
           adventure, or a solo journey to explore the world, a travel agency can
           provide you with a custom-tailored itinerary that exceeds your
           expectations.
         </h2>
-        <button className="btn bg-[#5c98f2] text-white">More Info</button>
+        <button className="btn bg-primary text-white">More Info</button>
       </div>
       <Fade delay={1e2}>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10">

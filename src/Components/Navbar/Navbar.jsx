@@ -18,7 +18,9 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" activeClassName="bg-red-500">
+          Home
+        </NavLink>
       </li>
       {user && (
         <li>
@@ -65,7 +67,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost lg:text-xl md:text-lg">
-            South <span className="text-[#5c98f2]">Travel</span>
+            South <span className="text-primary">Travel</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -73,9 +75,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2">
           {user ? (
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className=" btn btn-ghost btn-circle avatar">
-                <div className=" w-10 rounded-full">
+            <div className="dropdown dropdown-hover dropdown-end">
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar hover-dropdown"
+              >
+                <div className="w-10 rounded-full">
                   <img
                     src={
                       user?.photoURL ||
@@ -85,7 +90,7 @@ const Navbar = () => {
                   />
                 </div>
               </label>
-              <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 hover-dropdown-content">
                 <li>
                   <button className="btn btn-sm btn-ghost">
                     {user?.displayName || user?.email || "user"}

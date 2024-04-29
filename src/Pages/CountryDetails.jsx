@@ -54,7 +54,7 @@ const CountryDetails = () => {
         </div>
         <div className=" lg:flex md:flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
           <div className=" flex items-center gap-5">
-            <a className=" text-[#5c98f2] text-4xl" href="">
+            <a className=" text-primary text-4xl" href="">
               <FaPaperPlane />
             </a>
             <div>
@@ -65,7 +65,7 @@ const CountryDetails = () => {
             </div>
           </div>
           <div className=" flex items-center gap-5">
-            <a className=" text-[#5c98f2] text-4xl" href="">
+            <a className=" text-primary text-4xl" href="">
               <FaPhoneSquareAlt />
             </a>
             <div>
@@ -74,7 +74,7 @@ const CountryDetails = () => {
             </div>
           </div>
           <div className=" flex items-center gap-5">
-            <a className=" text-[#5c98f2] text-4xl" href="">
+            <a className=" text-primary text-4xl" href="">
               <MdEmail />
             </a>
             <div>
@@ -98,7 +98,7 @@ const CountryDetails = () => {
           />
         </div>
         <div className="mt-5 text-center lg:w-2/4">
-          <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
+          <h2 className=" font-reenie text-primary font-bold text-3xl mb-4">
             A Guide to Your Next Adventure
           </h2>
           <h2 className=" font-poppins font-bold text-5xl mb-4">
@@ -110,11 +110,11 @@ const CountryDetails = () => {
             know the typical prices for flights and hotels for the desired
             destinations.
           </h2>
-          <button className=" btn  bg-[#5c98f2] text-white">Contact Us</button>
+          <button className=" btn  bg-primary text-white">Contact Us</button>
         </div>
       </div>
       <div className=" mt-16 text-center px-5 lg:px-10">
-        <h2 className=" font-reenie text-[#5c98f2] font-bold text-3xl mb-4">
+        <h2 className=" font-reenie text-primary font-bold text-3xl mb-4">
           Check All
         </h2>
         <h2 className=" font-poppins font-bold text-5xl mb-4">Package</h2>

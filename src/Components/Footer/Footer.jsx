@@ -7,13 +7,13 @@ const Footer = () => {
   return (
     <div>
       <div
-        className=" lg:flex justify-center items-center bg-[#5c98f2] lg:py-32 py-16 px-10 gap-20 font-poppins"
-        style={{
-          backgroundImage:
-            "url(https://i.ibb.co/5G06kfd/73404-landmark-horizon-metropolis-skyline-night-2560x1440.jpg)",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
+        className=" lg:flex justify-center items-center bg-primary lg:py-24 py-16 px-10 gap-20 font-poppins"
+        // style={{
+        //   backgroundImage:
+        //     "url(https://i.ibb.co/5G06kfd/73404-landmark-horizon-metropolis-skyline-night-2560x1440.jpg)",
+        //   backgroundPosition: "center",
+        //   backgroundSize: "cover",
+        // }}
       >
         <p className=" lg:w-2/4 lg:text-5xl text-2xl text-center lg:text-left text-white font-poppins font-bold">
           Travel beyond your imagination, with our Travel Agency!
@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
           <div className="grid grid-cols-1 gap-4">
             <p className=" font-semibold text-2xl">Contact</p>
-            <button className=" btn bg-[#5c98f2] border-none text-white">
+            <button className=" btn bg-neutral hover:bg-secondary border-none text-white">
               info@southtravel.com
             </button>
             <p className=" font-semibold lg:text-2xl">+01 483 593 284</p>

@@ -218,7 +218,7 @@ const AddSpot = () => {
         </div>
 
         <div className="form-control mt-6">
-          <button className="btn bg-[#5c98f2] text-white">
+          <button className="btn bg-primary text-white">
             Add Tourists Spot
           </button>
         </div>

@@ -45,7 +45,7 @@ const CountrySlider = ({ spot }) => {
           <p className="font-semibold text-xl">{country_Name}</p>
           <p>Here is filled with diverse cultures & cities</p>
           <Link to={`/country/${encodeURIComponent(country_Name)}`}>
-            <button className="bg-[#5c98f2] px-4 py-2 rounded-lg mt-4">
+            <button className="bg-primary px-4 py-2 rounded-lg mt-4">
               All Packages
             </button>
           </Link>

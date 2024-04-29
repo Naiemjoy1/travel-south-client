@@ -11,6 +11,18 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "synthwave"],
+    themes: [
+      {
+        mytheme: {
+          primary: "#17b9d4",
+          secondary: "#19bc9b",
+          accent: "#dc2625",
+          neutral: "#343434",
+          "base-100": "#ffffff",
+        },
+      },
+      "light",
+      "synthwave",
+    ],
   },
 };
