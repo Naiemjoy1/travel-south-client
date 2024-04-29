@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const AddSpot = () => {
   const { user } = useAuth();
-  // console.log(user);
+
+  useEffect(() => {
+    document.title = "Add Spot";
+  }, []);
 
   const handleAddSpot = (event) => {
     event.preventDefault();
@@ -36,10 +39,6 @@ const AddSpot = () => {
       user_email,
       user_name,
     };
-
-    useEffect(() => {
-      document.title = "Add Spot";
-    }, []);
 
     // console.log(newSpot);
 
