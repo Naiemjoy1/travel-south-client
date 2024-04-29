@@ -63,7 +63,7 @@ const MyList = () => {
     return (
       <div className="flex justify-center items-center h-screen">
         <div>
-          <span className="loading loading-spinner loading-lg"></span>
+          <span className="loading loading-spinner loading-lg text-2xl text-primary"></span>
         </div>
       </div>
     );

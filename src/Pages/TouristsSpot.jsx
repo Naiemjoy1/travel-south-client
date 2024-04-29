@@ -5,12 +5,17 @@ import useAuth from "../hooks/useAuth";
 
 const TouristsSpot = () => {
   const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = "Tourists Spot";
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(delay);
   }, []);
 
-  // console.log(user);
   const spots = useLoaderData();
   const [sortOrder, setSortOrder] = useState("");
 
@@ -29,18 +34,31 @@ const TouristsSpot = () => {
 
   return (
     <div className=" mt-10 mb-10">
-      <div className=" text-center mb-5">
-        <select onChange={(e) => handleSort(e.target.value)} value={sortOrder}>
-          <option value="">Sort by Cost</option>
-          <option value="ascending">Lowest to Highest</option>
-          <option value="descending">Highest to Lowest</option>
-        </select>
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 lg:px-10">
-        {sortedSpots.map((spot) => (
-          <TouristsSpotCard key={spot._id} spot={spot} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <div>
+            <span className="loading loading-spinner loading-lg text-primary text-2xl"></span>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className=" text-center mb-5">
+            <select
+              onChange={(e) => handleSort(e.target.value)}
+              value={sortOrder}
+            >
+              <option value="">Sort by Cost</option>
+              <option value="ascending">Lowest to Highest</option>
+              <option value="descending">Highest to Lowest</option>
+            </select>
+          </div>
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 lg:px-10">
+            {sortedSpots.map((spot) => (
+              <TouristsSpotCard key={spot._id} spot={spot} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
