@@ -7,6 +7,7 @@ import MyListCard from "./MyListCard";
 const MyList = () => {
   const { user } = useAuth();
   const [sortOrder, setSortOrder] = useState("");
+  const [sortByCountry, setSortByCountry] = useState("");
   const [spots, setSpots] = useState([]);
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,25 +20,32 @@ const MyList = () => {
     setSortOrder(order);
   };
 
+  const handleSortByCountry = (country) => {
+    setSortByCountry(country);
+  };
+
   const filteredSpots = user
     ? spots.filter((spot) => spot.user_email === user.email)
     : [];
 
-  const sortedSpots = filteredSpots.slice().sort((a, b) => {
-    if (sortOrder === "ascending") {
-      return a.average_cost - b.average_cost;
-    } else if (sortOrder === "descending") {
-      return b.average_cost - a.average_cost;
-    }
-    return 0;
-  });
+  let sortedSpots = filteredSpots.slice();
+
+  if (sortOrder === "ascending") {
+    sortedSpots = sortedSpots.sort((a, b) => a.average_cost - b.average_cost);
+  } else if (sortOrder === "descending") {
+    sortedSpots = sortedSpots.sort((a, b) => b.average_cost - a.average_cost);
+  }
+
+  if (sortByCountry) {
+    sortedSpots = sortedSpots.filter(
+      (spot) => spot.country_Name === sortByCountry
+    );
+  }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://assaignment-server.vercel.app/spot"
-        );
+        const response = await fetch("http://localhost:5001/spot");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -69,8 +77,31 @@ const MyList = () => {
     );
   }
 
+  const countries = [
+    "Bangladesh",
+    "Thailand",
+    "Indonesia",
+    "Malaysia",
+    "Vietnam",
+    "Cambodia",
+  ];
+
   return (
     <div className=" mt-10 mb-10 min-h-[calc(100vh-564px)]">
+      <div className="flex justify-center mb-5">
+        <select
+          onChange={(e) => handleSortByCountry(e.target.value)}
+          value={sortByCountry}
+          className="ml-3"
+        >
+          <option value="">Sort by Country</option>
+          {countries.map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
+        </select>
+      </div>
       {sortedSpots.length === 0 ? (
         <p className="text-center text-gray-500">
           You have no data to show{" "}

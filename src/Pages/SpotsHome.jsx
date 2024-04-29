@@ -4,20 +4,21 @@ import { Fade } from "react-awesome-reveal";
 
 const SpotsHome = () => {
   const [spotsData, setSpotsData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://assaignment-server.vercel.app/spot"
-        );
+        const response = await fetch("http://localhost:5001/spot");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
         setSpotsData(data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error.message);
+        setLoading(false);
       }
     };
 
@@ -87,8 +88,8 @@ const SpotsHome = () => {
             className="h-[120px] rounded-xl flex items-center lg:px-10 md:px-10 px-5"
             style={{
               backgroundImage: "url(https://i.ibb.co/KKpb3bn/banner-01.jpg)",
-              backgroundSize: "cover", // Add this line
-              backgroundPosition: "center", // Optionally, to center the background image
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <img
@@ -104,8 +105,8 @@ const SpotsHome = () => {
             className="h-[120px] rounded-xl flex items-center p-10"
             style={{
               backgroundImage: "url(https://i.ibb.co/kQ9HfcQ/banner-02.jpg)",
-              backgroundSize: "cover", // Add this line
-              backgroundPosition: "center", // Optionally, to center the background image
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <img
@@ -121,8 +122,8 @@ const SpotsHome = () => {
             className="h-[120px] rounded-xl flex items-center lg:px-10 md:px-10 px-5"
             style={{
               backgroundImage: "url(https://i.ibb.co/yQWVTwT/banner-05.jpg)",
-              backgroundSize: "cover", // Add this line
-              backgroundPosition: "center", // Optionally, to center the background image
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <img
@@ -136,15 +137,23 @@ const SpotsHome = () => {
           </div>
         </div>
       </Fade>
-      <Fade delay={1e2}>
-        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 items-center justify-between mt-10">
-          {shuffleArray(shuffleSpots(spotsData))
-            .slice(0, 6)
-            .map((spot, index) => (
-              <SpotsCard key={spot._id} spot={spot}></SpotsCard>
-            ))}
+      {loading ? ( // Check if loading
+        <div className="flex justify-center items-center h-screen">
+          <div>
+            <span className="loading loading-spinner loading-lg text-2xl text-primary"></span>
+          </div>
         </div>
-      </Fade>
+      ) : (
+        <Fade delay={1e2}>
+          <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 items-center justify-between mt-10">
+            {shuffleArray(shuffleSpots(spotsData))
+              .slice(0, 6)
+              .map((spot, index) => (
+                <SpotsCard key={spot._id} spot={spot}></SpotsCard>
+              ))}
+          </div>
+        </Fade>
+      )}
     </div>
   );
 };
