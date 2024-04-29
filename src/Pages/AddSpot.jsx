@@ -43,7 +43,7 @@ const AddSpot = () => {
     // console.log(newSpot);
 
     // send data to server
-    fetch("http://localhost:5001/spot", {
+    fetch("https://assaignment-server.vercel.app/spot", {
       method: "POST",
       headers: {
         "content-type": "application/json",
