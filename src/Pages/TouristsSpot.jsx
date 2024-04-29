@@ -61,7 +61,7 @@ const TouristsSpot = () => {
         </div>
       ) : (
         <>
-          <div className="text-center flex justify-center items-center gap-40 mb-10">
+          <div className="text-center flex justify-center items-center lg:gap-40 md:gap-40 mb-10">
             <select
               onChange={(e) => handleSort(e.target.value)}
               value={sortOrder}

@@ -83,7 +83,7 @@ const SpotDetails = () => {
   return (
     <div className=" mb-10">
       <div className=" w-full ">
-        <img className=" w-full h-[500px]" src={image} alt="" />
+        <img className=" w-full lg:h-[500px]" src={image} alt="" />
         <div className=" h-52 bg-gray-100 flex items-center lg:px-10 md:px-10 px-5 mb-14">
           <div className=" lg:w-2/5 md:w-2/5">
             <p className=" text-4xl font-poppins font-semibold mb-2">
