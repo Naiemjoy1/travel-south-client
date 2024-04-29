@@ -4,14 +4,14 @@ const CountrySlider = ({ spot }) => {
   const { _id, image, country_Name } = spot;
 
   const backgroundImageURLs = {
-    Bangladesh: "https://i.ibb.co/LhvYXDf/6491872d1f962c001de086fa.jpg",
+    Bangladesh: "https://i.ibb.co/g4yV4cC/Awesome-look-of-Lalbagh-Fort.jpg",
     Thailand:
       "https://i.ibb.co/X4N68jP/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg",
-    Indonesia: "https://i.ibb.co/bzbR123/bali-jack.webp",
+    Indonesia: "https://i.ibb.co/pbjbh8k/indonesia-best-islands-bali.jpg",
     Malaysia: "https://i.ibb.co/Jn9gNsP/240-petronas-twin-towersjpg.jpg",
-    Vietnam:
-      "https://i.ibb.co/b6YmNYw/Asian-woman-wearing-Vietnam-culture-traditional-at-Trang-An-Vietnam-1.jpg",
-    Cambodia: "https://i.ibb.co/3W6M6Hp/Angkor-Wat-temple-complex-Camb.webp",
+    Vietnam: "https://i.ibb.co/2PCPWT5/halongbay-quangninh.jpg",
+    Cambodia:
+      "https://i.ibb.co/0KTRyjC/angkor-wat-main-temple-reflected-water-beautiful-summer-sunrisesd-2-1024x636.jpg",
   };
 
   const backgroundImageStyle = {
