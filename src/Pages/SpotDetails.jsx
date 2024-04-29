@@ -42,7 +42,9 @@ const SpotDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5001/spot");
+        const response = await fetch(
+          "https://assaignment-server.vercel.app/spot"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
