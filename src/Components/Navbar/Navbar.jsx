@@ -101,12 +101,12 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/login">
-                <button className="btn btn-sm bg-primary text-white">
+                <button className="btn btn-sm bg-primary text-white hover:bg-[#5c98f2]">
                   Login
                 </button>
               </Link>
               <Link to="/register">
-                <button className="btn btn-sm bg-primary text-white">
+                <button className="btn btn-sm bg-primary text-white hover:bg-[#5c98f2]">
                   Register
                 </button>
               </Link>
