@@ -93,7 +93,7 @@ const MyList = () => {
 
   return (
     <div className=" mt-10 mb-10 min-h-[calc(100vh-564px)]">
-      <div className="flex justify-center mb-5">
+      <div className="flex justify-center mb-10">
         <select
           onChange={(e) => handleSortByCountry(e.target.value)}
           value={sortByCountry}
