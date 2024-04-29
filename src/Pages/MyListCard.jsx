@@ -32,7 +32,7 @@ const MyListCard = ({ spot, cards, setCards, onDelete }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assaignment-server.vercel.app/spot/${_id}`, {
+        fetch(`http://localhost:5001/spot/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -34,7 +34,7 @@ const routes = createBrowserRouter([
       {
         path: "/tourspot",
         element: <TouristsSpot></TouristsSpot>,
-        loader: () => fetch("https://assaignment-server.vercel.app/spot"),
+        loader: () => fetch("http://localhost:5001/spot"),
       },
       {
         path: "/addspot",
@@ -51,7 +51,7 @@ const routes = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://assaignment-server.vercel.app/spot"),
+        loader: () => fetch("http://localhost:5001/spot"),
       },
       {
         path: "/spot/:id",
@@ -61,7 +61,7 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://assaignment-server.vercel.app/spot/${params.id}`),
+          fetch(`http://localhost:5001/spot/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -71,15 +71,13 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://assaignment-server.vercel.app/spot/${params.id}`),
+          fetch(`http://localhost:5001/spot/${params.id}`),
       },
       {
         path: "/country/:countryName",
         element: <CountryDetails></CountryDetails>,
         loader: ({ params }) =>
-          fetch(
-            `https://assaignment-server.vercel.app/spot/country/${params.countryName}`
-          ),
+          fetch(`http://localhost:5001/spot/country/${params.countryName}`),
       },
     ],
   },
