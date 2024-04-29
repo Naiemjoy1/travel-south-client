@@ -88,6 +88,9 @@ const MyList = () => {
     "Cambodia",
   ];
 
+  // Shuffle the sortedSpots array randomly
+  const shuffledSpots = sortedSpots.sort(() => Math.random() - 0.5);
+
   return (
     <div className=" mt-10 mb-10 min-h-[calc(100vh-564px)]">
       <div className="flex justify-center mb-5">
@@ -104,7 +107,7 @@ const MyList = () => {
           ))}
         </select>
       </div>
-      {sortedSpots.length === 0 ? (
+      {shuffledSpots.length === 0 ? (
         <p className="text-center text-gray-500">
           You have no data to show{" "}
           <span className=" text-primary">
@@ -114,7 +117,7 @@ const MyList = () => {
         </p>
       ) : (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 lg:px-10">
-          {sortedSpots.map((spot) => (
+          {shuffledSpots.map((spot) => (
             <MyListCard
               key={spot._id}
               spot={spot}
