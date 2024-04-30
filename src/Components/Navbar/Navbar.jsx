@@ -18,9 +18,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/" activeClassName="bg-red-500">
-          Home
-        </NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       {user && (
         <li>
@@ -66,7 +64,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost lg:text-xl md:text-lg">
+          <Link to="/" className=" lg:text-xl font-semibold md:text-lg">
             South <span className="text-primary">Travel</span>
           </Link>
         </div>
