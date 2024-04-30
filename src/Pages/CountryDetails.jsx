@@ -52,7 +52,7 @@ const CountryDetails = () => {
             </h1>
           </div>
         </div>
-        <div className=" lg:flex md:flex items-center justify-between gap-4 bg-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
+        <div className=" lg:flex md:flex items-center justify-between gap-4  bg-neutral text-white p-10 w-4/5 mx-auto rounded-xl shadow-xl absolute inset-x-0 -bottom-16">
           <div className=" flex items-center gap-5">
             <a className=" text-primary text-4xl" href="">
               <FaPaperPlane />

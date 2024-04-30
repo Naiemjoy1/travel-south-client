@@ -84,9 +84,9 @@ const SpotDetails = () => {
     <div className=" mb-10">
       <div className=" w-full ">
         <img className=" w-full lg:h-[500px]" src={image} alt="" />
-        <div className=" h-52 bg-gray-100 flex items-center lg:px-10 md:px-10 px-5 mb-14">
-          <div className=" lg:w-2/5 md:w-2/5">
-            <p className=" text-4xl font-poppins font-semibold mb-2">
+        <div className=" h-52 bg-neutral text-white flex items-center lg:px-10 md:px-10 px-5 mb-14">
+          <div className=" lg:w-2/5 md:w-2/5 w-2/4">
+            <p className=" lg:text-4xl font-poppins font-semibold mb-2">
               {tourists_spot_name}
             </p>
             <p className=" flex items-center gap-2">
@@ -98,7 +98,7 @@ const SpotDetails = () => {
           </div>
           <div className=" lg:flex md:flex grid grid-cols-1 items-center lg:gap-14 md:gap-5">
             <div className="flex items-center gap-4">
-              <span className=" text-5xl text-primary">
+              <span className=" lg:text-5xl text-3xl text-primary">
                 <BsClock />
               </span>
               <div>
@@ -109,7 +109,7 @@ const SpotDetails = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <span className=" text-5xl text-primary">
+              <span className=" lg:text-5xl text-primary text-3xl">
                 <WiDayCloudyWindy />
               </span>
               <div>
@@ -120,7 +120,7 @@ const SpotDetails = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <span className=" text-5xl text-primary">
+              <span className=" lg:text-5xl text-3xl text-primary">
                 <MdOutlinePeopleAlt />
               </span>
               <div>
@@ -140,7 +140,9 @@ const SpotDetails = () => {
               </p>
               <p className=" font-poppins ">{short_description}</p>
             </div>
-            <div className="divider"></div>
+            <div className="flex items-center w-full my-4">
+              <hr className="w-full " />
+            </div>
             <div>
               <p className=" mb-4 text-2xl font-poppins font-semibold">
                 Included/Excluded
@@ -152,7 +154,7 @@ const SpotDetails = () => {
                 help you make any necessary arrangements before your journey
                 begins.
               </p>
-              <div className="flex gap-10 items-center mt-10">
+              <div className="lg:flex md:flex gap-10 items-center mt-10">
                 <div className=" gap-10">
                   <p className=" flex items-center gap-2">
                     <span className="text-primary">
@@ -207,7 +209,9 @@ const SpotDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="divider"></div>
+            <div className="flex items-center w-full my-4">
+              <hr className="w-full " />
+            </div>
             <div>
               <p className=" mb-4 text-2xl font-poppins font-semibold">
                 Tour Location: {location}
@@ -219,8 +223,8 @@ const SpotDetails = () => {
               </p>
             </div>
           </div>
-          <div className="  lg:w-2/5">
-            <div className="card  bg-base-100 shadow-xl">
+          <div className="mt-5  lg:w-2/5">
+            <div className="card bg-neutral text-white shadow-xl">
               <div className="card-body">
                 <div className=" flex items-center justify-between">
                   <div className=" font-poppins">
@@ -231,12 +235,16 @@ const SpotDetails = () => {
                     <p className=" font-bold text-3xl">$ {average_cost}</p>
                   </div>
                 </div>
-                <div className="divider"></div>
+                <div className="flex items-center w-full my-4">
+                  <hr className="w-full " />
+                </div>
                 <div className=" font-poppins">
                   <p className=" text-lg font-semibold">Date</p>
                   <p className="">Date</p>
                 </div>
-                <div className="divider"></div>
+                <div className="flex items-center w-full my-4">
+                  <hr className="w-full " />
+                </div>
                 <div className=" flex justify-between items-center">
                   <div className=" font-poppins">
                     <p className=" text-lg font-semibold">Adults</p>
@@ -252,7 +260,9 @@ const SpotDetails = () => {
                     </a>
                   </div>
                 </div>
-                <div className="divider"></div>
+                <div className="flex items-center w-full my-4">
+                  <hr className="w-full " />
+                </div>
                 <div className=" flex justify-between items-center">
                   <div className=" font-poppins">
                     <p className=" text-lg font-semibold">children</p>
@@ -268,7 +278,9 @@ const SpotDetails = () => {
                     </a>
                   </div>
                 </div>
-                <div className="divider"></div>
+                <div className="flex items-center w-full my-4">
+                  <hr className="w-full " />
+                </div>
                 <div className=" font-poppins">
                   <p className=" text-lg font-semibold">Extra Services</p>
                   <p className="">Add extra services on your reservation</p>
@@ -279,7 +291,7 @@ const SpotDetails = () => {
                       <input
                         type="checkbox"
                         defaultChecked
-                        className="checkbox w-3 h-3"
+                        className="checkbox w-3 h-3 bg-primary"
                       />
                     </span>
                     Health Insurance ( $ 220 )
@@ -289,13 +301,13 @@ const SpotDetails = () => {
                       <input
                         type="checkbox"
                         defaultChecked
-                        className="checkbox w-3 h-3"
+                        className="checkbox w-3 h-3 bg-primary"
                       />
                     </span>
                     Medical Insurance ( $ 45 )
                   </p>
                 </div>
-                <button className="btn bg-primary text-white">
+                <button className="btn border-none bg-primary text-white">
                   BOOK BOW FOR $ 000
                 </button>
               </div>
