@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiFillClockCircle } from "react-icons/ai";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaCircleCheck, FaLocationDot } from "react-icons/fa6";
 import { GiCheckMark } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { LuMinus, LuPlus } from "react-icons/lu";
@@ -27,6 +27,7 @@ import { WiDayCloudyWindy } from "react-icons/wi";
 import { MdOutlinePeopleAlt } from "react-icons/md";
 import { BsClock } from "react-icons/bs";
 import { useMediaQuery } from "@react-hook/media-query";
+import { FaRegCheckSquare } from "react-icons/fa";
 
 const SpotDetails = () => {
   const spot = useLoaderData();
@@ -79,6 +80,51 @@ const SpotDetails = () => {
     if (isMedium) return 2;
     return 3;
   };
+
+  const [count, setCount] = useState(1); // Initial count is 1
+
+  const incrementCount = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const decrementCount = () => {
+    if (count > 1) {
+      // Ensure count doesn't go below 1
+      setCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  const [countChild, setCountChild] = useState(0);
+
+  const incrementCountChild = () => {
+    setCountChild((prevCount) => prevCount + 1);
+  };
+
+  const decrementCountChild = () => {
+    if (countChild > 0) {
+      setCountChild((prevCount) => prevCount - 1);
+    }
+  };
+
+  const [healthInsuranceChecked, setHealthInsuranceChecked] = useState(false);
+  const [healthInsuranceCost, setHealthInsuranceCost] = useState(220);
+
+  const [medicalInsuranceChecked, setMedicalInsuranceChecked] = useState(false);
+  const [medicalInsuranceCost, setMedicalInsuranceCost] = useState(45);
+
+  const handleHealthInsuranceChange = (event) => {
+    setHealthInsuranceChecked(event.target.checked);
+  };
+
+  const handleMedicalInsuranceChange = (event) => {
+    setMedicalInsuranceChecked(event.target.checked);
+  };
+
+  const totalValue =
+    average_cost * count +
+    average_cost * countChild +
+    (healthInsuranceChecked ? healthInsuranceCost : 0) +
+    (medicalInsuranceChecked ? medicalInsuranceCost : 0);
 
   return (
     <div className=" mb-10">
@@ -251,13 +297,15 @@ const SpotDetails = () => {
                     <p className="">Over 18 ($ {average_cost})</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <a href="">
+                    <button onClick={decrementCount}>
                       <LuMinus />
-                    </a>
-                    <p className=" font-poppins font-semibold text-xl">1</p>
-                    <a href="">
+                    </button>
+                    <p className="font-poppins font-semibold text-xl">
+                      {count}
+                    </p>
+                    <button onClick={incrementCount}>
                       <LuPlus />
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div className="flex items-center w-full my-4">
@@ -269,13 +317,15 @@ const SpotDetails = () => {
                     <p className="">under 18 ($ {average_cost})</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <a href="">
+                    <button onClick={decrementCountChild}>
                       <LuMinus />
-                    </a>
-                    <p className=" font-poppins font-semibold text-xl">0</p>
-                    <a href="">
+                    </button>
+                    <p className="font-poppins font-semibold text-xl">
+                      {countChild}
+                    </p>
+                    <button onClick={incrementCountChild}>
                       <LuPlus />
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div className="flex items-center w-full my-4">
@@ -285,30 +335,28 @@ const SpotDetails = () => {
                   <p className=" text-lg font-semibold">Extra Services</p>
                   <p className="">Add extra services on your reservation</p>
                 </div>
-                <div className=" mb-5">
+                <div className=" grid grid-cols-1 gap-2 mb-5">
                   <p className=" flex gap-5 items-center">
-                    <span>
-                      <input
-                        type="checkbox"
-                        defaultChecked
-                        className="checkbox w-3 h-3 bg-primary"
-                      />
-                    </span>
-                    Health Insurance ( $ 220 )
+                    <input
+                      type="checkbox"
+                      checked={healthInsuranceChecked}
+                      onChange={handleHealthInsuranceChange}
+                      className="checkbox w-5 h-5 bg-primary"
+                    />
+                    Health Insurance ( ${healthInsuranceCost} )
                   </p>
                   <p className=" flex gap-5 items-center">
-                    <span>
-                      <input
-                        type="checkbox"
-                        defaultChecked
-                        className="checkbox w-3 h-3 bg-primary"
-                      />
-                    </span>
+                    <input
+                      type="checkbox"
+                      checked={medicalInsuranceChecked}
+                      onChange={handleMedicalInsuranceChange}
+                      className="checkbox w-5 h-5 bg-primary"
+                    />
                     Medical Insurance ( $ 45 )
                   </p>
                 </div>
-                <button className="btn border-none bg-primary text-white">
-                  BOOK BOW FOR $ 000
+                <button className="btn hover:bg-secondary border-none bg-primary text-white">
+                  BOOK FOR $ {totalValue}
                 </button>
               </div>
             </div>
@@ -320,7 +368,7 @@ const SpotDetails = () => {
           <p className=" font-reenie text-primary text-3xl">Check All</p>
           <p className=" font-poppins font-bold text-5xl">Packages</p>
         </div>
-        {/* <div className=" mt-10 grid grid-cols-3 gap-5 justify-between items-center ">
+        {/* <div className=" mt-10 grid grid-cols-3 gap-5 ju stify-between items-center ">
           {spotsData.map((spot, index) => (
             <PackageSlider key={spot._id} spot={spot}></PackageSlider>
           ))}
