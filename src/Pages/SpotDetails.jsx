@@ -7,6 +7,9 @@ import { LuMinus, LuPlus } from "react-icons/lu";
 import { useLoaderData } from "react-router-dom";
 import SpotsCard from "./SpotsCard";
 import PackageSlider from "../Components/PackageSlider/PackageSlider";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 import {
   Navigation,
   Pagination,
@@ -32,6 +35,7 @@ import { FaRegCheckSquare } from "react-icons/fa";
 const SpotDetails = () => {
   const spot = useLoaderData();
   const [spotsData, setSpotsData] = useState([]);
+  const [startDate, setStartDate] = useState(new Date());
 
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isMedium = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
@@ -286,7 +290,11 @@ const SpotDetails = () => {
                 </div>
                 <div className=" font-poppins">
                   <p className=" text-lg font-semibold">Date</p>
-                  <p className="">Date</p>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    className="bg-primary px-4 py-1 rounded-lg"
+                  />
                 </div>
                 <div className="flex items-center w-full my-4">
                   <hr className="w-full " />
