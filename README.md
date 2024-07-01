@@ -62,10 +62,3 @@ npm install
 npm start
 ```
 
-```
-
-In this corrected version:
-- The repository URLs have been updated to match the actual GitHub repositories (`travel-south-client` and `travel-south-server`).
-- The commands are formatted properly for clarity and readability.
-  
-You can use this updated section in your README file to provide clear instructions for cloning and setting up both the client-side and server-side of your "South Travel" project.
