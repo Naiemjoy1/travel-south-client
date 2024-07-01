@@ -46,9 +46,7 @@ git clone https://github.com/Naiemjoy1/travel-south-server
 ```
 cd B9A10-client-side-Naiemjoy1
 ```
-```
-npm install
-```
+```sh npm install```
 ```
 npm start
 ```
