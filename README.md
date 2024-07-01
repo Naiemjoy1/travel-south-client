@@ -80,4 +80,4 @@
 - Contact information's
 
 ### Tools
-`React`
+`html`,`css`,`reactjs`,`javaScript`,`nodejs`,`express`,`mongodb`,`firebase`,`authentication`,`tailwindcss`,
