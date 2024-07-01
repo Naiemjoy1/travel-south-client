@@ -78,3 +78,6 @@
 - Address
 - Social Links
 - Contact information's
+
+### Tools
+`React`
