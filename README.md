@@ -38,8 +38,8 @@ Explore South Travel: [South Travel](https://assignment10-mongodb.web.app/)
 
 ### Clone the Repository
 
-```bash
-git clone https://github.com/Naiemjoy1/travel-south-client
+```git clone https://github.com/Naiemjoy1/travel-south-client```
+``
 git clone https://github.com/Naiemjoy1/travel-south-server
 ```
 ### Setup Client-side
