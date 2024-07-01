@@ -36,28 +36,36 @@ Explore South Travel: [South Travel](https://assignment10-mongodb.web.app/)
 
 ## How to Run Locally
 
+Certainly! Here's the corrected section for cloning and setting up the client-side and server-side of the "South Travel" project:
+
+```markdown
 ### Clone the Repository
 
-```git clone https://github.com/Naiemjoy1/travel-south-client```
-``
+```bash
+git clone https://github.com/Naiemjoy1/travel-south-client
 git clone https://github.com/Naiemjoy1/travel-south-server
 ```
+
 ### Setup Client-side
-```
-cd B9A10-client-side-Naiemjoy1
-```
-```sh npm install```
-```
+
+```bash
+cd travel-south-client
+npm install
 npm start
 ```
 
 ### Setup Server-side
-```
-cd b9a10-server-side-Naiemjoy1
-```
-```
+
+```bash
+cd travel-south-server
 npm install
-```
-```
 npm start
 ```
+
+```
+
+In this corrected version:
+- The repository URLs have been updated to match the actual GitHub repositories (`travel-south-client` and `travel-south-server`).
+- The commands are formatted properly for clarity and readability.
+  
+You can use this updated section in your README file to provide clear instructions for cloning and setting up both the client-side and server-side of your "South Travel" project.
